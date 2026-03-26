@@ -19,3 +19,4 @@ return (
     </section>
 );
 }
+export default Projects;

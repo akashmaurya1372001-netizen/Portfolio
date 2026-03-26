@@ -1,6 +1,6 @@
 function About() {
   return (
-    <section id="about" classname="p-20 text-center">
+    <section id="about" className="p-20 text-center">
       <h2>About me</h2>
       <p className="max-w-xl mx-auto">
         I 'm a react devloper passionate about building mordern wed appliction

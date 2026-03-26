@@ -1,15 +1,17 @@
-import React from 'react'
-const Navbar= () =>{
-    return(
-        <nav className='flex justify-between p-6 bg-grey-800'>
-            <h1>Akash</h1>
-            <ul className='flex gap-6'>
-                <li><a href="#about">About</a></li>
-                <li><a href="#project">Projects</a></li>
-                <li><a href="#contact">contect</a></li>
-            </ul>
+// components/Navbar.jsx
+import { useState, useEffect } from "react";
 
-        </nav>
-    );
-}
-export default Navbar;
+ function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [dark, setDark] = useState(true);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark])
+  return(
+  <nav className="hidden md:flex gap-6">
+          {['Home','About','Skills','Projects','Contact'].map(item => (
+            <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
+          ))}
+        </nav>)}
+        export default Navbar 

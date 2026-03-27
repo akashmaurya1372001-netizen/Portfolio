@@ -1,12 +1,10 @@
-function About() {
+ function About() {
   return (
-    <section id="about" className="p-20 text-center">
-      <h2>About me</h2>
-      <p className="max-w-xl mx-auto">
-        I 'm a react devloper passionate about building mordern wed appliction
-        using React ,tailwind and backend services like APPWRITE.
-      </p>
+    <section id="about" className="px-6 py-16">
+      <h2 className="text-3xl text-purple-400">About</h2>
+      <p>I build modern UI using React.</p>
     </section>
   );
 }
+
 export default About;

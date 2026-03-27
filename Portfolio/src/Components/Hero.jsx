@@ -1,24 +1,14 @@
 import { motion } from "framer-motion";
-function Hero() {
-    return(
-  <section className="h-screen flex flex-col justify-corner items-center">
-    <motion.h1
-      className="text-5xl font-bold"
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-    >
-      hi,I'm Akash
-    </motion.h1>
-    <motion.p className="mt-4 text-xl"
-    initial={{opacity:0}}
-    animation={{opacity:1}}
-    transition={{delay:1}}
-    >
-        React Devloper
-    </motion.p>
-
-  </section>
-    );
+ function Hero() {
+  return (
+    <section id="home" className="pt-24 px-6 py-16 flex justify-between items-center">
+      <div>
+        <h2 className="text-4xl font-bold">I'm <span className="text-purple-400">Akash</span></h2>
+        <p className="text-slate-400">Frontend Developer</p>
+      </div>
+      <div className="w-40 h-40 border-4 border-purple-400 rounded-full flex items-center justify-center">👨‍💻</div>
+    </section>
+  );
 }
+
 export default Hero;

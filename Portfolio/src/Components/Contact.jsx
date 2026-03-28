@@ -2,7 +2,7 @@ import { ChevronDownIcon } from "@heroicons/react/16/solid";
 
 export default function Contact() {
   return (
-    <div className="isolate bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
+    <div className="isolate bg-gray-900 px-6 py-24 sm:py-32  rounded-e-3xl rounded-l-3xl ">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -17,11 +17,9 @@ export default function Contact() {
       </div>
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-          Contact sales
+          Contact Us
         </h2>
-        <p className="mt-2 text-lg/8 text-gray-400">
-          Aute magna irure deserunt veniam aliqua magna enim voluptate.
-        </p>
+      
       </div>
       <form
         action="#"
@@ -63,23 +61,7 @@ export default function Contact() {
               />
             </div>
           </div>
-          <div className="sm:col-span-2">
-            <label
-              htmlFor="company"
-              className="block text-sm/6 font-semibold text-white"
-            >
-              Company
-            </label>
-            <div className="mt-2.5">
-              <input
-                id="company"
-                name="company"
-                type="text"
-                autoComplete="organization"
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-              />
-            </div>
-          </div>
+          
           <div className="sm:col-span-2">
             <label
               htmlFor="email"
@@ -156,7 +138,7 @@ export default function Contact() {
             type="submit"
             className="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
           >
-            Let's talk
+            Submit
           </button>
         </div>
       </form>

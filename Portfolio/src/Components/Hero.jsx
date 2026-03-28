@@ -1,12 +1,24 @@
 import { motion } from "framer-motion";
- function Hero() {
+import Profile from "../assets/Profile.jpeg"
+function Hero() {
   return (
-    <section id="home" className="pt-24 px-6 py-16 flex justify-between items-center">
-      <div>
-        <h2 className="text-4xl font-bold">I'm <span className="text-purple-400">Akash</span></h2>
-        <p className="text-slate-400">Frontend Developer</p>
+    <section
+      id="home"
+      className=" px-10 py-17 flex justify-between items-center rounded-bl-4xl bg-blue-300 rounded-e-full"
+    >
+      <div >
+        <h2 className="text-4xl font-bold">
+         <p>Hi</p>
+          I'm <span className="text-purple-400">Akash</span>
+        </h2>
+        <br />
+        <p className="text-slate-400 font-mono text-2xl"> I craft modern web applications with clean code, smooth UI, and powerful
+  backend systems. Always learning, always building.</p>
       </div>
-      <div className="w-40 h-40 border-4 border-purple-400 rounded-full flex items-center justify-center">👨‍💻</div>
+      <div className="flex justify-item-auto  rounded-l-full mask-origin-content">
+        <img src={Profile} alt="profile pic" className="  rounded-full  border-4 border-purple-500 shadow-black"/>
+      </div>
+      
     </section>
   );
 }

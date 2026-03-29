@@ -9,7 +9,7 @@ function Navbar() {
   }, [dark]);
 
   return (
-    <header className="fixed top-0 w-full  border-b-black rounded-e-full rounded-l-full">
+    <header className="fixed top-0 w-full  rounded-e-full rounded-l-full">
       <div className="max-w-7xl mx-auto flex justify-between p-4">
         <h1 className="text-purple-400 font-bold">&lt;AKASH MAURYA /&gt;</h1>
 

@@ -15,7 +15,7 @@ function Hero() {
         <p className="text-slate-400 font-mono text-2xl"> I craft modern web applications with clean code, smooth UI, and powerful
   backend systems. Always learning, always building.</p>
       </div>
-      <div className="flex justify-item-auto  rounded-l-full mask-origin-content">
+      <div className="flex justify-item-auto   mask-origin-content">
         <img src={Profile} alt="profile pic" className="  rounded-full  border-4 border-purple-500 shadow-black"/>
       </div>
       

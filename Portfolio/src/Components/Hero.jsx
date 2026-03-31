@@ -12,7 +12,7 @@ function Hero() {
           I'm <span className="text-purple-400">Akash</span>
         </h2>
         <br />
-        <p className="text-slate-400 font-mono text-2xl"> I craft modern web applications with clean code, smooth UI, and powerful
+        <p className="text-black font-mono text-2xl"> I craft modern web applications with clean code, smooth UI, and powerful
   backend systems. Always learning, always building.</p>
       </div>
       <div className="flex justify-item-auto   mask-origin-content">

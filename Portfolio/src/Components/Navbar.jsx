@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaGithub } from "react-icons/fa";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,16 +10,17 @@ function Navbar() {
   }, [dark]);
 
   return (
-    <header className="fixed top-0 w-full  rounded-e-full rounded-l-full">
-      <div className="max-w-7xl mx-auto flex justify-between p-4">
+    <header className="fixed top-0 w-full  rounded-e-full rounded-l-full border-b-blue-500">
+      <div className="max-w-7xl mx-auto flex justify-between p-4 ">
         <h1 className="text-purple-400 font-bold">&lt;AKASH MAURYA /&gt;</h1>
 
-        <nav className="hidden md:flex gap-6">
-          {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+        <nav className="hidden md:flex gap-6 font-bold">
+          {["Home", "About", "Skills", "Projects", "Contact",].map((item) => (
             <a key={item} href={`#${item.toLowerCase()}`}>
               {item}
             </a>
           ))}
+          <FaGithub/>
         </nav>
 
         <div className="flex gap-3">
@@ -31,7 +33,7 @@ function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden flex flex-col gap-4 p-4">
+        <div className="md:hidden flex flex-col gap-4 p-4 font-bold">
           {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
             <a
               key={item}

@@ -7,12 +7,13 @@ function Hero() {
       id="home"
       className=" px-10 py-17 flex justify-between items-center rounded-bl-4xl bg-cyan-500 rounded-e-full"
     >
-      <img
+      
+      <div>
+        <img 
         src={hero}
         alt="background"
-        className="w-full absolute inset-0 object-cover opacity-20 rounded-b-xl"
+        className="w-full absolute inset-0 opacity-40  rounded-b-xl object-contain "
       />
-      <div>
         <h2 className="text-4xl font-bold">
           <p>Hi</p>
           I'm <span className="text-purple-400">Akash</span>
@@ -24,11 +25,11 @@ function Hero() {
           powerful backend systems. Always learning, always building.
         </p>
       </div>
-      <div className="flex justify-item-auto   mask-origin-content">
+      <div >
         <img
           src={Profile}
           alt="profile pic"
-          className="  rounded-full  border-4 border-purple-500 shadow-black"
+          className=" rounded-full "
         />
       </div>
     </section>

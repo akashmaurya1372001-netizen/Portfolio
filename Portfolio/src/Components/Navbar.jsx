@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,43 +10,99 @@ function Navbar() {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  return (
-    <header className="fixed top-0 w-full  rounded-e-full rounded-l-full border-b-blue-500">
-      <div className="max-w-7xl mx-auto flex justify-between p-4 ">
-        <h1 className="text-purple-400 font-bold">&lt;AKASH MAURYA /&gt;</h1>
+  const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
 
-        <nav className="hidden md:flex gap-6 font-bold">
-          {["Home", "About", "Skills", "Projects", "Contact",].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`}>
+  return (
+    <header className="fixed top-4 left-0 w-full z-50 px-4">
+      <div className="max-w-7xl mx-auto flex justify-between items-center p-3 
+      backdrop-blur-xl bg-white/10 dark:bg-black/30 
+      border border-white/10 rounded-full shadow-lg">
+
+        {/* Logo */}
+        <h1 className="text-purple-400 font-bold font-mono">
+          &lt;AKASH /&gt;
+        </h1>
+
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex items-center gap-6 font-semibold">
+          {navItems.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="relative group text-gray-300 hover:text-purple-400 transition"
+            >
               {item}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-purple-400 transition-all group-hover:w-full"></span>
             </a>
           ))}
-          <FaGithub/>
+
+          {/* GitHub */}
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-xl hover:text-purple-400 transition"
+          >
+            <FaGithub />
+          </a>
         </nav>
 
-        <div className="flex gap-3">
-          <button onClick={() => setDark(!dark)}>{dark ? "☀️" : "🌙"}</button>
+        {/* Right Controls */}
+        <div className="flex items-center gap-3">
+          {/* Theme Toggle */}
+          <button
+            onClick={() => setDark(!dark)}
+            className="bg-gray-800 px-3 py-1 rounded-md text-sm hover:bg-purple-500 transition"
+          >
+            {dark ? "☀️" : "🌙"}
+          </button>
 
-          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-            ☰
+          {/* Hamburger */}
+          <button
+            className="md:hidden text-2xl"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? "✖" : "☰"}
           </button>
         </div>
       </div>
 
-      {menuOpen && (
-        <div className="md:hidden flex flex-col gap-4 p-4 font-bold">
-          {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-      )}
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden mt-3 mx-4 p-4 rounded-xl 
+            backdrop-blur-xl bg-black/40 border border-white/10"
+          >
+            <div className="flex flex-col gap-4 font-semibold text-center">
+              {navItems.map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-purple-400 transition"
+                >
+                  {item}
+                </a>
+              ))}
+
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex justify-center text-xl hover:text-purple-400"
+              >
+                <FaGithub />
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
+
 export default Navbar;

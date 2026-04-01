@@ -19,17 +19,17 @@ const Skills = () => {
         My Skills 
       </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-white">
         {skills.map((skill, index) => (
           <motion.div
             key={index}
             whileHover={{ scale: 1.1 }}
             className="flex flex-col items-center p-6  rounded-xl border border-gray-700 hover:border-purple-500 transition"
           >
-            <div className={`text-5xl mb-4 ${skill.color}`}>
+            <div className={`text-5xl  mb-4 ${skill.color}`}>
               {skill.icon}
             </div>
-            <p className="text-gray-300 font-medium">{skill.name}</p>
+            <p className="text- font-medium">{skill.name}</p>
           </motion.div>
         ))}
       </div>

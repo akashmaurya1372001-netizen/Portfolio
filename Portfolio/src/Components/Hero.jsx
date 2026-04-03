@@ -7,19 +7,13 @@ function Hero() {
       id="home"
       className=" px-10 py-17 flex justify-between items-center rounded-bl-4xl bg-cyan-500 rounded-e-full"
     >
-      
       <div>
-        <img 
-        src={hero}
-        alt="background"
-        className="w-full absolute inset-0 opacity-40  rounded-b-xl object-contain "
-      />
-        <h2 className="text-4xl font-bold">
-          <p>Hi</p>
+        <h2 className="text-4xl font-bold text-center">
+          <p className="translate-x-[-66px]">Hi</p>
           I'm <span className="text-purple-400">Akash</span>
         </h2>
         <br />
-        <p className="text-black font-mono text-2xl justify-center">
+        <p className="text-black font-mono text-2xl text-center">
           {" "}
           I craft modern web applications with clean code, smooth UI, and
           powerful backend systems. Always learning, always building.

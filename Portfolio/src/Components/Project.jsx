@@ -2,7 +2,7 @@ import project from "./data/project";
 
 function Projects(){
 return (
-    <section id="project" className="p-20">
+    <section id="projects" className="p-20">
         <h2 className="text-3xl font-bold text-center mb-10">Project</h2>
         <div className="grid md:grid-cols-2 gap-2">
             {project.map((project,index)=>(

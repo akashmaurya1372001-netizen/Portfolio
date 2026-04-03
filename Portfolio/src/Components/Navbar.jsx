@@ -19,9 +19,12 @@ function Navbar() {
       border border-white/10 rounded-full shadow-lg">
 
         {/* Logo */}
+         <a href="{`#${home}`}">
         <h1 className="text-purple-400 font-bold font-mono">
-          &lt;AKASH /&gt;
+          &lt;AKASH MAURYA/&gt;
+         
         </h1>
+        </a>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-6 font-semibold">
@@ -32,7 +35,7 @@ function Navbar() {
               className="relative group text-gray-300 hover:text-purple-400 transition"
             >
               {item}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-purple-400 transition-all group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 w-0 h-2px bg-purple-400 transition-all group-hover:w-full"></span>
             </a>
           ))}
 
@@ -58,7 +61,7 @@ function Navbar() {
           </button>
 
           {/* Hamburger */}
-          <button
+          <button id="hamburger"
             className="md:hidden text-2xl"
             onClick={() => setMenuOpen(!menuOpen)}
           >
@@ -83,17 +86,17 @@ function Navbar() {
                   key={item}
                   href={`#${item.toLowerCase()}`}
                   onClick={() => setMenuOpen(false)}
-                  className="hover:text-purple-400 transition"
+                  className="hover:text-blue-400 transition"
                 >
                   {item}
                 </a>
               ))}
 
               <a
-                href="https://github.com/"
+                href="https://github.com/akashmaurya1372001-netizen"
                 target="_blank"
                 rel="noreferrer"
-                className="flex justify-center text-xl hover:text-purple-400"
+                className="flex justify-center text-xl hover:text-blue-400"
               >
                 <FaGithub />
               </a>

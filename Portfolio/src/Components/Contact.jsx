@@ -1,8 +1,39 @@
-import { ChevronDownIcon } from "@heroicons/react/16/solid";
+
+import emailjs from "emailjs-com";
+import { useState } from "react";
+
+emailjs.init( import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+);
 
 export default function Contact() {
+  const [loading,setLoading]=useState(false);
+  const sendEmail = (e) => {
+  e.preventDefault();
+  setLoading(true);
+
+    emailjs.sendForm(
+  import.meta.env.VITE_EMAILJS_SERVICE,
+  import.meta.env.VITE_EMAILJS_TEMPLATE,
+  e.target,
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+)
+    .then(() => {
+      alert("Message Sent ✅");
+      e.target.reset();
+      setLoading(false); // ✅ fix
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("Error ❌");
+      setLoading(false); // ✅ fix
+    });
+};
+
   return (
-    <div className="isolate bg-gray-900 px-6 py-24 sm:py-32  rounded-e-3xl rounded-l-3xl ">
+    <div
+      id="contact"
+      className="isolate bg-gray-900 px-6 py-24 sm:py-32  rounded-e-3xl rounded-l-3xl "
+    >
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -19,49 +50,28 @@ export default function Contact() {
         <h2 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
           Contact Us
         </h2>
-      
       </div>
-      <form
-        action="#"
-        method="POST"
-        className="mx-auto mt-16 max-w-xl sm:mt-20"
-      >
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+      <form onSubmit={sendEmail} className="mx-auto mt-16 max-w-xl sm:mt-20">
+        <div className=" sm:grid-cols-2">
           <div>
             <label
               htmlFor="first-name"
               className="block text-sm/6 font-semibold text-white"
             >
-              First name
+              Name
             </label>
             <div className="mt-2.5">
               <input
                 id="first-name"
-                name="first-name"
+                name="name"
                 type="text"
+                required
                 autoComplete="given-name"
                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
               />
             </div>
           </div>
-          <div>
-            <label
-              htmlFor="last-name"
-              className="block text-sm/6 font-semibold text-white"
-            >
-              Last name
-            </label>
-            <div className="mt-2.5">
-              <input
-                id="last-name"
-                name="last-name"
-                type="text"
-                autoComplete="family-name"
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-              />
-            </div>
-          </div>
-          
+
           <div className="sm:col-span-2">
             <label
               htmlFor="email"
@@ -74,12 +84,13 @@ export default function Contact() {
                 id="email"
                 name="email"
                 type="email"
+                required
                 autoComplete="email"
                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
               />
             </div>
           </div>
-          
+
           <div className="sm:col-span-2">
             <label
               htmlFor="message"
@@ -91,7 +102,7 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
-                rows={4}
+                required
                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
                 defaultValue={""}
               />
@@ -99,11 +110,8 @@ export default function Contact() {
           </div>
         </div>
         <div className="mt-10">
-          <button
-            type="submit"
-            className="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-          >
-            Submit
+          <button type="submit" disabled={loading} className="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+            {loading ? "Sending..." : "Send message"}
           </button>
         </div>
       </form>

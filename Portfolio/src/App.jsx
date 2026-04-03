@@ -13,6 +13,7 @@ function App() {
       <br />
       <br />
       <br />
+      <br />
       <Hero></Hero>
       <About></About>
       <Skills></Skills>

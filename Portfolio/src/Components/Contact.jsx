@@ -30,6 +30,7 @@ export default function Contact() {
 };
 
   return (
+  <section className="m-6">
     <div
       id="contact"
       className="isolate bg-gray-900 px-6 py-24 sm:py-32  rounded-e-3xl rounded-l-3xl "
@@ -48,7 +49,7 @@ export default function Contact() {
       </div>
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-          Contact Us
+          Contact Me
         </h2>
       </div>
       <form onSubmit={sendEmail} className="mx-auto mt-16 max-w-xl sm:mt-20">
@@ -116,5 +117,6 @@ export default function Contact() {
         </div>
       </form>
     </div>
+    </section>
   );
 }

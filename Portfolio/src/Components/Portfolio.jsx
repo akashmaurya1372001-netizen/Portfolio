@@ -3,8 +3,8 @@ import password from "../assets/password.png";
 import currency from "../assets/currency.png";
 function Portfolio() {
   return (
-    <section id="projects" className="px-6 py-11">
-        <h2 className="font-bold text-4xl text-center py-18"> My Projects</h2>
+    <section id="projects" className="px-6 bg-green-100 rounded-3xl m-5 py-6">
+        <h2 className="font-bold text-4xl text-center py-11"> My Projects</h2>
     <div className="flex gap-6 justify-center">
         
       <ProjectCard

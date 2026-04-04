@@ -10,13 +10,13 @@ function Hero() {
        backgroundSize: "cover",
        backgroundRepeat: "no-repeat",
        backgroundPosition: "center"}}
-      className="px-6 md:px-11 py-10 flex flex-col-reverse md:flex-row items-center justify-between gap-8 bg-cyan-500 rounded-bl-3xl md:rounded-bl-4xl md:rounded-e-full "
+      className="px-6 md:px-11 py-10 flex flex-col-reverse md:flex-row items-center justify-between gap-8  rounded-bl-3xl md:rounded-bl-4xl md:rounded-e-full "
     >
       {/* Text Section */}
       <div className="text-center md:text-left max-w-xl">
         <h2 className="text-3xl md:text-4xl font-bold">
           <span className="block">Hi</span>
-          I'm <span className="text-purple-400">Akash</span>
+          I'm <span className="text-blue-400 font-semibold font-mono">Akash maurya</span>
         </h2>
 
         <p className="mt-4 text-black font-mono text-lg md:text-2xl">
@@ -26,11 +26,11 @@ function Hero() {
       </div>
 
       {/* Image Section */}
-      <div className="flex justify-center">
+      <div className="flex justify-center hover:items-start">
         <img
           src={Profile}
           alt="profile pic"
-          className="w-40 h-40 md:w-60 md:h-60 object-cover rounded-full border-4 border-white shadow-lg"
+          className=" w-40 h-40 md:w-60 md:h-60 object-cover rounded-full border-4 border-white hover:border-cyan-300"
         />
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin ,} from "react-icons/fa";
+import { FaGithubSquare, FaLinkedin ,} from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
@@ -23,7 +23,7 @@ function Navbar() {
           
         
          <a href="#">
-        <h1 className="text-zinc-900 font-bold font-mono">
+        <h1 className="text-pink-300 font-bold font-mono">
           &lt;AKASH MAURYA/&gt;
          
         </h1>
@@ -32,7 +32,6 @@ function Navbar() {
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-6 font-semibold justify-center">
           {navItems.map((item) => (
-            <a href={`#home`} key={"Home"}>
             <a
               key={item}
               href={ item === "Home" ? "#" : `#${item.toLowerCase()}`}
@@ -41,7 +40,7 @@ function Navbar() {
               {item}
               <span className="absolute left-0 -bottom-1 w-0 h-2px bg-purple-400 transition-all group-hover:w-full"></span>
             </a>
-            </a>
+    
           ))}
 
           {/* GitHub */}
@@ -49,13 +48,17 @@ function Navbar() {
             href="https://github.com/"
             target="_blank"
             rel="noreferrer"
-            className="text-xl hover:text-purple-400 transition"
+            className="text-xl hover:text-white transition text-right"
           >
-            <FaGithub />
+            <FaGithubSquare />
           </a>
-                  <a href="https://www.linkedin.com/in/akash-maurya-499416374/">
+         {/*Linkedin*/}
+                  <a
+                  className="text-xl hover:text-white"
+                   href="https://www.linkedin.com/in/akash-maurya-499416374/">
                     <FaLinkedin />
                   </a>
+
         </nav>
 
         {/* Right Controls */}
@@ -89,7 +92,7 @@ function Navbar() {
                   key={item}
                   href={`#${item.toLowerCase()}`}
                   onClick={() => setMenuOpen(false)}
-                  className="hover:text-blue-400 transition"
+                  className="hover:text-white transition"
                 >
                   {item}
                 </a>
@@ -99,10 +102,15 @@ function Navbar() {
                 href="https://github.com/akashmaurya1372001-netizen"
                 target="_blank"
                 rel="noreferrer"
-                className="flex justify-center text-xl hover:text-blue-400"
+                className="flex justify-center text-xl hover:text-white"
               >
-                <FaGithub />
+                <FaGithubSquare />
               </a>
+                  <a
+                  className="flex justify-center text-xl hover:text-white"
+                   href="https://www.linkedin.com/in/akash-maurya-499416374/">
+                    <FaLinkedin />
+                  </a>
             </div>
           </motion.div>
         )}

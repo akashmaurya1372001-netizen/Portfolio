@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin ,} from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs"
 
 export default function Footer() {
   return (
@@ -11,6 +12,7 @@ export default function Footer() {
         <a href="https://www.linkedin.com/in/akash-maurya-499416374/">
           <FaLinkedin />
         </a>
+        <a href=""><BsTwitterX /></a>
       </div>
     </footer>
   );

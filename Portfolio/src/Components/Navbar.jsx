@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin ,} from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
@@ -19,23 +19,28 @@ function Navbar() {
       border border-white/10 rounded-full shadow-lg">
 
         {/* Logo */}
-         <a href="{`#${home}`}">
-        <h1 className="text-purple-400 font-bold font-mono">
+        
+          
+        
+         <a href="#">
+        <h1 className="text-zinc-900 font-bold font-mono">
           &lt;AKASH MAURYA/&gt;
          
         </h1>
         </a>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-6 font-semibold">
+        <nav className="hidden md:flex items-center gap-6 font-semibold justify-center">
           {navItems.map((item) => (
+            <a href={`#home`} key={"Home"}>
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={ item === "Home" ? "#" : `#${item.toLowerCase()}`}
               className="relative group text-gray-300 hover:text-purple-400 transition"
             >
               {item}
               <span className="absolute left-0 -bottom-1 w-0 h-2px bg-purple-400 transition-all group-hover:w-full"></span>
+            </a>
             </a>
           ))}
 
@@ -48,17 +53,15 @@ function Navbar() {
           >
             <FaGithub />
           </a>
+                  <a href="https://www.linkedin.com/in/akash-maurya-499416374/">
+                    <FaLinkedin />
+                  </a>
         </nav>
 
         {/* Right Controls */}
         <div className="flex items-center gap-3">
           {/* Theme Toggle */}
-          <button
-            onClick={() => setDark(!dark)}
-            className="bg-gray-800 px-3 py-1 rounded-md text-sm hover:bg-purple-500 transition"
-          >
-            {dark ? "☀️" : "🌙"}
-          </button>
+         
 
           {/* Hamburger */}
           <button id="hamburger"
